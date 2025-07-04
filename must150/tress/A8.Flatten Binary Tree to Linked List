@@ -1,0 +1,20 @@
+class Solution:
+    def flatten(self, root: Optional[TreeNode]) -> None:
+
+        while root:
+            #save in temp
+            temp = root.right
+            #move left to right
+            root.right = root.left
+            root.left = None
+            # go to the right bottom
+            cur =  root
+            while cur and cur.right:
+                cur = cur.right
+            # attach temp to new tree's bottom
+            cur.right = temp
+            #repeat
+            root = root.right
+        
+        
+        

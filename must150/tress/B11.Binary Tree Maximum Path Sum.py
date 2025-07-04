@@ -15,8 +15,10 @@ class Solution:
             left = max(0,function(root.left))
             right = max(0,function(root.right))
 
+            #subtree path
+            #we already removed -ve so it will give max
             maxi = max(maxi, left+right+root.val)
-
+            # nominate best among themselves, we removed -ve so root can be also returned.
             return max(left, right) + root.val
 
           

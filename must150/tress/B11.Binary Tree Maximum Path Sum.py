@@ -18,7 +18,7 @@ class Solution:
             #subtree path
             #we already removed -ve so it will give max
             maxi = max(maxi, left+right+root.val)
-            # nominate best among themselves, we removed -ve so root can be also returned.
+            # nominate best path among themselves, we removed -ve so root can be also returned.
             return max(left, right) + root.val
 
           

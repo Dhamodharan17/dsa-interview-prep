@@ -23,3 +23,21 @@ class Solution:
         n = len(height)
         cache = [-1] * n
         return function(n-1)
+
+class Solution:
+    def minCost(self, height):
+    
+        n = len(height)
+        
+        if n == 0 or n == 1:
+            return 0
+            
+        cache = [0] * n
+        cache[1] = abs(height[0] - height[1])
+        
+        for i in range(2, n):
+            jump1 = abs(height[i] - height[i-1]) + cache[i-1]
+            jump2 = abs(height[i] - height[i-2]) + cache[i-2]
+            cache[i] = min(jump1, jump2)
+            
+        return cache[n-1]

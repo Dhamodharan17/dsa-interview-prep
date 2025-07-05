@@ -15,7 +15,7 @@ class Solution:
             for i in range(3):
                 
                 if prev_activity == i: continue
-            
+                                                # move next day, change prev
                 cur_cost = arr[current_day][i] + function(current_day+1,i)
                 maxi = max(maxi, cur_cost)
             
